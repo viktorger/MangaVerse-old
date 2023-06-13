@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.viktorger.mangaverse.presentation.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_genres"
+        android:name="com.viktorger.mangaverse.presentation.genres.GenresFragment"
+        android:label="fragment_genres"
+        tools:layout="@layout/fragment_genres" />
+
+    <fragment
+        android:id="@+id/navigation_news"
+        android:name="com.viktorger.mangaverse.presentation.news.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/navigation_library"
+        android:name="com.viktorger.mangaverse.presentation.library.LibraryFragment"
+        android:label="fragment_library"
+        tools:layout="@layout/fragment_library" />
+
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.viktorger.mangaverse.presentation.more.MoreFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_more" />
+</navigation>
