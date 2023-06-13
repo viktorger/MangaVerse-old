@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace 'com.viktorger.data'
-    compileSdk 32
+    compileSdk compileAndroidSdk
 
     defaultConfig {
-        minSdk 24
-        targetSdk 32
+        minSdk minAndroidSdk
+        targetSdk targetAndroidSdk
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -32,7 +32,7 @@ android {
 
 dependencies {
 
-    implementation project(path: ':domain')
+    implementation project(Modules.Domain)
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
 }
