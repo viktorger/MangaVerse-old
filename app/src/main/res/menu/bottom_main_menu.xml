@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:title="Home"
+        android:icon="@drawable/mnu_home" />
+
+    <item
+        android:id="@+id/navigation_genres"
+        android:title="Genre"
+        android:icon="@drawable/mnu_genre" />
+
+    <item
+        android:id="@+id/navigation_news"
+        android:title="News"
+        android:icon="@drawable/mnu_news" />
+
+    <item
+        android:id="@+id/navigation_library"
+        android:title="Library"
+        android:icon="@drawable/mnu_library" />
+
+    <item
+        android:id="@+id/navigation_more"
+        android:title="More"
+        android:icon="@drawable/mnu_more" />
+
+</menu>
