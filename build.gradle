@@ -1,5 +1,15 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    repositories {
+        google()  // Google's Maven repository
+
+        mavenCentral()  // Maven Central repository
+
+    }
+    dependencies {
+        classpath 'com.google.gms:google-services:4.3.15'
+    }
+
     ext {
 
         compileAndroidSdk = 33
@@ -8,27 +18,33 @@ buildscript {
 
         daggerVersion = "2.45"
         navVersion = "2.5.3"
+        lifecycleVersion = "2.6.1"
 
         Libs = [
                 Android  : [
-                        CoreKtx         : "androidx.core:core-ktx:1.7.0",
+                        CoreKtx         : "androidx.core:core-ktx:1.10.1",
                         FragmentKtx     : "androidx.fragment:fragment-ktx:1.5.5",
                         ActivityKtx     : "androidx.activity:activity-ktx:1.6.1",
                         AppCompat       : "androidx.appcompat:appcompat:1.6.1",
                         Lifecycle       : [
-                                RuntimeKtx  : "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1",
-                                ViewModelKtx: "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1",
+                                ViewModelKtx   : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion",
+                                LiveDataKtx    : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
                         ],
                         ConstraintLayout: "androidx.constraintlayout:constraintlayout:2.1.4",
                         RecyclerView    : "androidx.recyclerview:recyclerview:1.2.1",
                         Navigation      : [
                                 Fragments: "androidx.navigation:navigation-fragment-ktx:$navVersion",
                                 UI       : "androidx.navigation:navigation-ui-ktx:$navVersion",
-                        ]
+                        ],
+
                 ],
                 Google   : [
                         Material      : "com.google.android.material:material:1.8.0",
                         Dagger        : "com.google.dagger:hilt-android:$daggerVersion",
+                        Firebase      : [
+                                BoM         : "com.google.firebase:firebase-bom:32.1.0",
+                                Database    : "com.google.firebase:firebase-database-ktx",
+                        ]
                 ],
                 JetBrains: [
                         Coroutines: [
@@ -50,4 +66,3 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
     id 'org.jetbrains.kotlin.jvm' version '1.7.20' apply false
 }
-
