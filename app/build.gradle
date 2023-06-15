@@ -67,10 +67,6 @@ dependencies {
     // Jetpack Compose Integration
     // implementation "androidx.navigation:navigation-compose:$nav_version"
 
-    // Firebase
-    // implementation platform(Libs.Google.Firebase.BoM)
-    // implementation Libs.Google.Firebase.Database
-
     // RecyclerView
     implementation Libs.Android.RecyclerView
 
