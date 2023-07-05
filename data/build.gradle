@@ -3,8 +3,10 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+apply plugin: 'kotlin-kapt'
+
 android {
-    namespace 'com.viktorger.data'
+    namespace 'com.viktorger.mangaverse.data'
     compileSdk compileAndroidSdk
 
     defaultConfig {
@@ -36,7 +38,18 @@ dependencies {
     // Firebase
     implementation platform(Libs.Google.Firebase.BoM)
     implementation Libs.Google.Firebase.Database
+    implementation Libs.Google.Firebase.Storage
+
+    def room_version = "2.5.2"
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // Coroutines
+    implementation Libs.JetBrains.Coroutines.Core
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
 }
+
+apply plugin: 'com.google.gms.google-services'

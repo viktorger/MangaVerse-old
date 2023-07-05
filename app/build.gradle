@@ -1,7 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
 }
+
+apply plugin: 'kotlin-kapt'
 
 android {
     namespace 'com.viktorger.mangaverse'
@@ -50,6 +53,12 @@ dependencies {
     implementation project(Modules.Data)
     implementation project(Modules.Domain)
 
+    // Circle
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    // Glide
+    implementation Libs.Bumptech.Glide
+    kapt Libs.Bumptech.Annotations
 
     implementation Libs.Android.CoreKtx
     implementation Libs.Android.AppCompat
@@ -64,11 +73,18 @@ dependencies {
     implementation Libs.Android.Navigation.Fragments
     implementation Libs.Android.Navigation.UI
 
-    // Jetpack Compose Integration
-    // implementation "androidx.navigation:navigation-compose:$nav_version"
+    // Firebase
+    implementation platform(Libs.Google.Firebase.BoM)
+    implementation Libs.Google.Firebase.StorageUI
+    implementation Libs.Google.Firebase.Storage
+
+    def room_version = "2.5.2"
 
     // RecyclerView
     implementation Libs.Android.RecyclerView
+
+    // Coroutines
+    implementation Libs.JetBrains.Coroutines.Core
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

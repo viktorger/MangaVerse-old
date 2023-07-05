@@ -1,8 +1,8 @@
 package com.viktorger.mangaverse.domain.models
 
-data class MangaSimpleListItem(
-    val mangaId: Int,
-    val resourceId: Int,
+data class MangaShortcut(
+    val mangaId: String,
+    val imgURL: String,
     val title: String,
     val type: String
 )

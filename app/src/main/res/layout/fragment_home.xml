@@ -4,15 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.home.HomeFragment">
+    tools:context=".presentation.home.HomeFragment"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home_recent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:spanCount="3"
+        tools:listitem="@layout/item_manga_shortcut"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem="@layout/home_item_manga"
+        app:spanCount="3"
+
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

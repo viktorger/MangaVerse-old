@@ -1,8 +1,9 @@
 package com.viktorger.mangaverse.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.viktorger.mangaverse.R
 import com.viktorger.mangaverse.databinding.ActivityMainBinding

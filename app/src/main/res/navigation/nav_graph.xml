@@ -10,7 +10,12 @@
         android:id="@+id/navigation_home"
         android:name="com.viktorger.mangaverse.presentation.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_mangaDetailFragment"
+            app:launchSingleTop="false"
+            app:destination="@id/mangaDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_genres"
@@ -35,4 +40,31 @@
         android:name="com.viktorger.mangaverse.presentation.more.MoreFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_more" />
+    <fragment
+        android:id="@+id/mangaDetailFragment"
+        android:name="com.viktorger.mangaverse.presentation.home.detail.MangaDetailFragment"
+        android:label="fragment_manga_detail"
+        tools:layout="@layout/fragment_manga_detail" >
+        <argument
+            android:name="mangaId"
+            app:argType="string"
+            android:defaultValue="1" />
+        <action
+            android:id="@+id/action_mangaDetailFragment_to_chapterFragment"
+            app:destination="@id/chapterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chapterFragment"
+        android:name="com.viktorger.mangaverse.presentation.home.chapter.ChapterFragment"
+        android:label="fragment_chapter"
+        tools:layout="@layout/fragment_chapter" >
+        <argument
+            android:name="mangaId"
+            app:argType="string"
+            android:defaultValue="1" />
+        <argument
+            android:name="chapterId"
+            app:argType="string"
+            android:defaultValue="1" />
+    </fragment>
 </navigation>
